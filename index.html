@@ -3,8 +3,7 @@
 <!--
   Student portfolio template authored by Prof. Vinay Kanth Rao Kodipelly
   for the Active Learning Institute (ActiveSTEM.org).
-  This HTML template is provided under the MIT License for students
-  who build their academic portfolios on GitHub Pages or similar platforms.
+  Redesigned with "Modern Ivy" Aesthetic for Sruthi Gullapalli.
 -->
 <head>
   <meta charset="utf-8" />
@@ -12,1566 +11,829 @@
     name="viewport"
     content="width=device-width, initial-scale=1, viewport-fit=cover"
   />
-  <title><!-- STUDENT: Your Name -->Sruthi Gullapalli — Academic Portfolio | Active Learning Institute</title>
+  <title>Sruthi Gullapalli — Academic Portfolio</title>
 
   <!-- Basic SEO -->
   <meta
     name="description"
-    content="Academic and STEM portfolio for Sruthi Gullapalli, a 10th-grade student coached by the Active Learning Institute (ActiveSTEM.org), showcasing coursework, projects, events, and leadership."
+    content="Academic and STEM portfolio for Sruthi Gullapalli, a 10th-grade student coached by the Active Learning Institute (ActiveSTEM.org)."
   />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Sruthi Gullapalli — Academic Portfolio" />
-  <meta
-    property="og:description"
-    content="Academic portfolio showcasing mathematics coursework, STEM projects, and leadership. Coached by the Active Learning Institute."
-  />
-  <meta property="og:image" content="images/social-preview.jpg" />
-  <meta property="og:url" content="https://username.github.io/portfolio/" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <!-- Template credit & license -->
-  <meta
-    name="author"
-    content="Sruthi Gullapalli (student); template by Prof. Vinay Kanth Rao Kodipelly, Active Learning Institute (ActiveSTEM.org)"
-  />
-  <meta name="license" content="MIT License" />
+  <meta name="author" content="Sruthi Gullapalli" />
 
-  <!-- Canonical (STUDENT: update to your GitHub Pages URL) -->
-  <link rel="canonical" href="https://username.github.io/portfolio/" />
-
-  <!-- Fonts (brand kit) -->
+  <!-- Fonts: Playfair Display (Headings) & Lato (Body) for high-end academic feel -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Poppins:wght@700;800;900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&display=swap"
     rel="stylesheet"
   />
 
   <style>
     /* =========================================================
-       SECTION 1: DESIGN TOKENS (CSS VARIABLES)
-       (From Active Learning Institute brand kit)
+       DESIGN TOKENS: "MODERN IVY LEAGUE" THEME
+       Deep Forest Green + Copper + Stone
        ========================================================= */
 
     :root {
-      /* 1.1: Colors */
-      --navy: #1A237E; /* primary */
-      --green: #388E3C; /* accent (WCAG OK) */
-      --gold: #FFB300; /* highlight / primary CTA */
-      --teal-dark: #00796B; /* thematic */
-      --teal-light: #E0F2F1; /* thematic light */
-      --ink: #0f172a; /* heading ink */
-      --muted: #475569; /* body text */
-      --bg: #F5F7FF; /* page bg (light) */
-      --card: #FFFFFF; /* surfaces */
-      --border: #E0E3EC; /* lines */
+      /* Palette */
+      --primary: #064E3B;    /* Deep Forest Green (Prestigious) */
+      --primary-light: #065f46;
+      --accent: #D97706;     /* Copper/Amber (Energy & Highlight) */
+      --accent-soft: #FEF3C7; 
+      
+      --text-main: #1C1917;  /* Warm Black */
+      --text-muted: #57534E; /* Stone Gray */
+      --text-light: #A8A29E;
+      
+      --bg-body: #FAFAF9;    /* Warm Stone White (Not harsh white) */
+      --bg-surface: #FFFFFF;
+      --border: #E7E5E4;     /* Warm Light Gray */
 
-      /* 1.2: Stat Card Backgrounds */
-      --stat-bg-1: #e7f7e7; /* light green */
-      --stat-bg-2: #e9f0ff; /* light blue */
-      --stat-bg-3: #f3eef9; /* light purple */
-      --stat-bg-4: #fff9e6; /* light yellow */
-      --stat-bg-5: #fdeeee; /* light red */
+      /* Typography */
+      --font-heading: "Playfair Display", serif;
+      --font-body: "Lato", sans-serif;
 
-      /* 1.3: Typography */
-      --font-body: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial,
-        sans-serif;
-      --font-heading: "Poppins", system-ui, sans-serif;
-
-      /* 1.4: Spacing & Sizing */
-      --s-12: 12px;
-      --s-16: 16px;
-      --container: 1200px;
-
-      /* 1.5: Borders & Radii */
-      --r-8: 8px;
-      --r-10: 10px;
-      --r-14: 14px;
-      --r-pill: 999px;
-
-      /* 1.6: Shadows */
-      --shadow-1: 0 2px 8px rgba(26, 35, 126, 0.06);
-      --shadow-2: 0 4px 14px rgba(0, 0, 0, 0.08);
-      --shadow-3: 0 10px 25px rgba(0, 0, 0, 0.12);
+      /* Spacing */
+      --container: 1100px;
+      --radius: 4px; /* Sharper corners for a more professional look */
+      
+      /* Shadows (Softer, diffused) */
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     }
 
     /* =========================================================
-       SECTION 2: BASE STYLES & ACCESSIBILITY
+       BASE STYLES
        ========================================================= */
-
-    @media (prefers-reduced-motion: reduce) {
-      * {
-        animation: none !important;
-        transition: none !important;
-        scroll-behavior: auto !important;
-      }
-    }
-    :focus-visible {
-      outline: 3px solid var(--green);
-      outline-offset: 2px;
-      border-radius: 6px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-    html,
-    body {
-      height: 100%;
-    }
+    
+    * { box-sizing: border-box; }
+    
     body {
       margin: 0;
-      background: var(--bg);
-      color: var(--muted);
-      font: 400 1rem/1.6 var(--font-body);
+      background-color: var(--bg-body);
+      color: var(--text-muted);
+      font-family: var(--font-body);
+      font-weight: 400;
+      line-height: 1.7;
+      font-size: 1.05rem; /* Slightly larger for readability */
     }
 
-    h1,
-    h2,
-    h3 {
-      margin: 0.25em 0 0.4em;
+    h1, h2, h3, h4 {
       font-family: var(--font-heading);
-      color: var(--navy);
-    }
-    h1 {
-      font-size: clamp(2rem, 3vw + 1rem, 3.25rem);
-      font-weight: 800;
-    }
-    h2 {
-      font-size: clamp(1.6rem, 1.2vw + 1rem, 2rem);
-      font-weight: 800;
-    }
-    h3 {
-      font-size: 1.15rem;
-      font-weight: 800;
-    }
-    a {
-      color: var(--navy);
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
+      color: var(--primary);
+      margin-top: 0;
+      line-height: 1.2;
     }
 
-    .skip {
-      position: absolute;
-      left: -9999px;
-      top: auto;
-      width: 1px;
-      height: 1px;
-      overflow: hidden;
-    }
-    .skip:focus {
-      left: 16px;
-      top: 12px;
-      width: auto;
-      height: auto;
-      background: #fff;
-      color: var(--navy);
-      padding: 8px 12px;
-      border-radius: 8px;
-      box-shadow: var(--shadow-2);
-      z-index: 100;
-    }
+    h1 { font-size: clamp(2.5rem, 5vw, 3.8rem); font-weight: 900; letter-spacing: -0.02em; color: var(--text-main); }
+    h2 { font-size: 2.2rem; font-weight: 700; margin-bottom: 0.5em; }
+    h3 { font-size: 1.35rem; font-weight: 700; color: var(--text-main); }
+    h4 { font-size: 1.1rem; font-weight: 700; color: var(--text-main); margin-bottom: 8px; }
 
-    /* =========================================================
-       SECTION 3: LAYOUT & UTILITIES
-       ========================================================= */
+    a { color: var(--primary); text-decoration: none; transition: color 0.2s; }
+    a:hover { color: var(--accent); }
+    img { max-width: 100%; display: block; }
 
+    /* Layout */
     .container {
       max-width: var(--container);
-      margin-inline: auto;
-      padding: 0 20px;
-    }
-    .section {
-      padding: 48px 0;
-      content-visibility: auto;
-      contain-intrinsic-size: 1px 900px;
-    }
-    .section--bg-card {
-      background: var(--card);
-    }
-    .surface {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--r-14);
-      box-shadow: var(--shadow-2);
+      margin: 0 auto;
+      padding: 0 24px;
     }
 
-    .grid-3 {
-      display: grid;
-      gap: 20px;
-      grid-template-columns: repeat(3, 1fr);
+    .section {
+      padding: 80px 0;
+      border-bottom: 1px solid var(--border);
     }
-    .grid-2 {
+    .section:last-child { border-bottom: none; }
+
+    /* Grid System */
+    .grid {
       display: grid;
-      gap: 20px;
-      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
     }
-    .split {
-      display: grid;
-      gap: 24px;
-      grid-template-columns: 360px 1fr;
-    }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-sidebar { grid-template-columns: 2fr 1fr; }
 
     @media (max-width: 900px) {
-      .grid-3 {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-    @media (max-width: 1000px) {
-      .split {
-        grid-template-columns: 1fr;
-      }
-    }
-    @media (max-width: 640px) {
-      .grid-3,
-      .grid-2 {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .row {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 12px;
-    }
-    .row--tight {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin: 0 0 8px;
-    }
-
-    .fade-in-up {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-    }
-    .fade-in-up.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .fade-in-up.is-visible .stat-card {
-      transition-delay: calc(var(--child-index) * 100ms);
+      .grid-2, .grid-3, .grid-sidebar { grid-template-columns: 1fr; }
+      .section { padding: 60px 0; }
     }
 
     /* =========================================================
-       SECTION 4: UI COMPONENTS
+       COMPONENTS
        ========================================================= */
 
-    /* Header / Nav */
+    /* Buttons - Editorial Style */
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      font-family: var(--font-body);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      border-radius: var(--radius);
+      transition: all 0.2s;
+      border: 2px solid transparent;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background-color: var(--primary);
+      color: white;
+      box-shadow: var(--shadow-md);
+    }
+    .btn-primary:hover {
+      background-color: var(--primary-light);
+      transform: translateY(-1px);
+    }
+    .btn-outline {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: transparent;
+    }
+    .btn-outline:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    /* Cards - Minimalist with Top Accent */
+    .card {
+      background: var(--bg-surface);
+      padding: 32px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--primary); /* Distinguished accent */
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-top-color: var(--accent);
+    }
+
+    /* Badges */
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-radius: 4px;
+      background: var(--bg-body);
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+    }
+    .badge-accent { background: var(--accent-soft); color: var(--accent); border-color: transparent; }
+
+    /* =========================================================
+       HEADER
+       ========================================================= */
     .site-header {
       position: sticky;
       top: 0;
-      z-index: 50;
-      border-bottom: 3px solid rgba(76, 175, 80, 0.18);
-      box-shadow: 0 2px 15px rgba(26, 35, 126, 0.08);
-      background: rgba(255, 255, 255, 0.92);
-      -webkit-backdrop-filter: blur(10px);
-      backdrop-filter: blur(10px);
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 0;
     }
-    .nav {
+    .header-inner {
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 16px;
-      padding: 10px 0;
-      min-height: 56px;
     }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 6px 10px 6px 6px;
-      border-radius: 26px;
-      transition: 0.2s;
-    }
-    .brand:hover {
-      background: rgba(248, 249, 255, 0.8);
-      box-shadow: 0 3px 10px rgba(26, 35, 126, 0.05);
-      transform: translateY(-1px);
-    }
-    .brand-badge {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: var(--navy);
-      box-shadow: 0 2px 6px rgba(26, 35, 126, 0.18);
-      color: #fff;
-      font: 800 18px var(--font-heading);
-    }
-    .brand-title {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.05;
-    }
-    .brand-title .t1 {
-      font: 800 1.05rem var(--font-heading);
-      color: var(--navy);
-      letter-spacing: -0.01em;
-    }
-    .brand-title .t2 {
-      font: 700 0.85rem var(--font-body);
-      color: var(--navy);
-      opacity: 0.95;
-    }
-    .brand-title .t3 {
-      font: 700 0.7rem var(--font-body);
-      color: var(--green);
-      letter-spacing: 0.03em;
+    .logo {
+      font-family: var(--font-heading);
+      font-weight: 900;
+      font-size: 1.5rem;
+      color: var(--primary);
+      letter-spacing: -0.03em;
     }
     .nav-links {
-      margin-left: auto;
       display: flex;
-      gap: 8px;
-      align-items: center;
+      gap: 24px;
     }
     .nav-links a {
-      padding: 8px 12px;
-      border-radius: 20px;
+      font-size: 0.9rem;
       font-weight: 700;
-      transition: 0.2s;
-    }
-    .nav-links a:hover {
-      background: rgba(76, 175, 80, 0.08);
-      color: var(--green);
-    }
-    .menu-toggle {
-      display: none;
-      background: transparent;
-      border: 0;
-      color: var(--navy);
-      padding: 4px;
-      cursor: pointer;
-      line-height: 1;
-      margin-left: auto;
-    }
-    @media (max-width: 900px) {
-      .nav-links {
-        display: none;
-        position: fixed;
-        left: 0;
-        right: 0;
-        top: 56px;
-        bottom: 0;
-        background: var(--card);
-        padding: 12px 0;
-        box-shadow: var(--shadow-2);
-        overflow-y: auto;
-      }
-      .nav-links.show {
-        display: flex;
-        flex-direction: column;
-      }
-      .nav-links a {
-        padding: 14px 20px;
-        border-radius: 0;
-      }
-      .menu-toggle {
-        display: block;
-      }
-    }
-
-    /* Buttons */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 16px;
-      border-radius: 28px;
-      border: 2px solid transparent;
-      font: 800 0.9rem var(--font-body);
-      transition: filter 0.2s, background 0.2s, color 0.2s, box-shadow 0.2s;
-    }
-    .btn--primary {
-      background: var(--gold);
-      color: #231700;
-      box-shadow: var(--shadow-1);
-    }
-    .btn--primary:hover {
-      filter: brightness(0.97);
-    }
-    .btn--secondary {
-      background: var(--green);
-      color: #fff;
-      box-shadow: var(--shadow-1);
-    }
-    .btn--secondary:hover {
-      filter: brightness(0.97);
-    }
-    .btn--quiet {
-      background: var(--card);
-      color: var(--navy);
-      border-color: var(--navy);
-    }
-    .btn--quiet:hover {
-      background: #f3f6ff;
-    }
-
-    /* Chips / Pills */
-    .chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 12px;
-      border-radius: var(--r-pill);
-      border: 1px solid var(--border);
-      background: #f8faff;
-      color: var(--navy);
-      font: 700 0.85rem var(--font-body);
-    }
-    .chip[data-variant="grade"] {
-      background: #eff6ff;
-      border-color: #dbeafe;
-    }
-    .chip[data-variant="tag"] {
-      background: #e8f5e9;
-      border-color: #c8e6c9;
-      color: #1b5e20;
-    }
-    .chip[data-variant="thematic"] {
-      background: var(--teal-light);
-      border-color: #cbd5e1;
-      color: var(--teal-dark);
-    }
-
-    /* Lists */
-    .list {
-      list-style: none;
-      padding-left: 0;
-      margin: 0;
-    }
-    .list li {
-      position: relative;
-      padding-left: 18px;
-      margin: 0.35rem 0;
-    }
-    .list li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      top: 0;
-      color: var(--green);
-      font-weight: 900;
-    }
-
-    /* Cards */
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--r-10);
-      box-shadow: var(--shadow-2);
-      padding: var(--s-16);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .card:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-3);
-    }
-
-    /* Stats grid (if needed later) */
-    .stats-grid {
-      display: grid;
-      gap: 20px;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    }
-    .stat-card {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      padding: var(--s-16);
-      border-radius: var(--r-10);
-    }
-    .stat-card:nth-child(1) { background: var(--stat-bg-1); }
-    .stat-card:nth-child(2) { background: var(--stat-bg-2); }
-    .stat-card:nth-child(3) { background: var(--stat-bg-3); }
-    .stat-card:nth-child(4) { background: var(--stat-bg-4); }
-    .stat-card:nth-child(5) { background: var(--stat-bg-5); }
-
-    .stat-card__text {
-      display: flex;
-      flex-direction: column;
-    }
-    .stat-card__value {
-      font: 800 1.4rem var(--font-heading);
-      color: var(--navy);
-      line-height: 1.2;
-    }
-    .stat-card__label {
-      font: 600 0.9rem var(--font-body);
-      color: var(--muted);
-      line-height: 1.4;
-    }
-
-    /* Hero section customized for student portfolio */
-    .hero {
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(135deg, rgba(245, 247, 255, 0.98) 0%, #fff 100%);
-      padding: 60px 0 60px;
-      border-bottom: 1px solid var(--border);
-    }
-    .hero .kicker {
-      font: 800 0.85rem var(--font-body);
-      color: var(--green);
-      letter-spacing: 0.09em;
+      color: var(--text-muted);
       text-transform: uppercase;
-    }
-    .hero p.lead {
-      max-width: 720px;
-      color: var(--muted);
-      font-size: 1.02rem;
-      margin: 0.4rem 0 0;
-    }
-    .hero-avatar {
-      width: 96px;
-      height: 96px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid rgba(255, 255, 255, 0.9);
-      box-shadow: var(--shadow-2);
-      margin-bottom: 14px;
-    }
-    .hero-layout {
-      display: grid;
-      gap: 28px;
-      grid-template-columns: minmax(0, 2fr) minmax(0, 1.2fr);
-      align-items: flex-start;
-    }
-    @media (max-width: 900px) {
-      .hero-layout {
-        grid-template-columns: 1fr;
-      }
-    }
-    .hero-meta-grid {
-      display: grid;
-      gap: 10px;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      margin-top: 18px;
-    }
-    .hero-meta-card {
-      background: #f8fafc;
-      border-radius: var(--r-8);
-      border: 1px solid var(--border);
-      padding: 10px 12px;
-    }
-    .hero-meta-label {
-      font-size: 0.78rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      color: var(--muted);
       letter-spacing: 0.05em;
     }
-    .hero-meta-value {
-      font-size: 0.95rem;
-      color: var(--ink);
-      margin-top: 2px;
+    .nav-links a:hover { color: var(--primary); }
+
+    /* Mobile Menu Toggle */
+    .menu-toggle { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--primary); }
+    @media (max-width: 768px) {
+      .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: white; flex-direction: column; padding: 24px; border-bottom: 1px solid var(--border); box-shadow: var(--shadow-lg); }
+      .nav-links.active { display: flex; }
+      .menu-toggle { display: block; }
     }
 
-    /* Section headings */
-    .section-header {
-      margin-bottom: 18px;
-    }
-    .section-header .kicker {
-      font: 800 0.78rem var(--font-body);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--green);
-      margin-bottom: 2px;
-    }
-    .section-header p {
-      margin: 4px 0 0;
-      font-size: 0.95rem;
-      color: var(--muted);
-    }
-
-    /* Timeline for growth & leadership */
-    .timeline {
-      border-left: 2px solid #e2e8f0;
-      padding-left: 16px;
-      margin: 8px 0 0;
-    }
-    .timeline-item {
+    /* =========================================================
+       HERO SECTION
+       ========================================================= */
+    .hero {
       position: relative;
-      padding-left: 4px;
-      margin-bottom: 14px;
+      padding: 100px 0 120px;
+      background: linear-gradient(to bottom, var(--bg-surface), var(--bg-body));
     }
-    .timeline-dot {
-      position: absolute;
-      left: -21px;
-      top: 4px;
-      width: 11px;
-      height: 11px;
-      border-radius: 50%;
-      background: var(--green);
-      box-shadow: 0 0 0 3px rgba(56, 142, 60, 0.18);
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 60px;
+      align-items: center;
     }
-    .timeline-title {
+    @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 40px; } }
+
+    .hero-kicker {
+      font-family: var(--font-body);
       font-weight: 700;
-      font-size: 0.98rem;
-      color: var(--ink);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 16px;
+      display: block;
     }
-    .timeline-meta {
-      font-size: 0.82rem;
-      color: var(--muted);
+    .hero-lead {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+      max-width: 600px;
     }
-    .timeline-body {
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin-top: 3px;
+    
+    .hero-avatar-wrapper {
+      position: relative;
+    }
+    .hero-avatar {
+      width: 280px;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 50%; /* Circle */
+      margin: 0 auto;
+      border: 8px solid var(--bg-surface);
+      box-shadow: var(--shadow-lg);
+    }
+    /* Decorative circle behind avatar */
+    .hero-avatar-wrapper::before {
+      content: "";
+      position: absolute;
+      top: -20px; right: 50%; transform: translateX(50%);
+      width: 320px; height: 320px;
+      border-radius: 50%;
+      border: 2px dashed var(--primary);
+      opacity: 0.2;
+      z-index: -1;
     }
 
-    /* Table (exams & coursework) */
-    .table-wrapper {
-      margin-top: 8px;
+    /* =========================================================
+       SECTIONS
+       ========================================================= */
+    
+    /* Stats Row */
+    .stats-row {
+      display: flex;
+      gap: 40px;
+      margin-top: 40px;
+      border-top: 1px solid var(--border);
+      padding-top: 32px;
+    }
+    .stat-item strong {
+      display: block;
+      font-size: 2rem;
+      font-family: var(--font-heading);
+      color: var(--primary);
+      line-height: 1;
+    }
+    .stat-item span {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-light);
+    }
+    @media (max-width: 900px) { .stats-row { justify-content: center; } }
+
+    /* Tables */
+    .table-container {
       overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
     }
     table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 0.9rem;
-    }
-    th,
-    td {
-      padding: 6px 8px;
-      text-align: left;
-      border-bottom: 1px solid #e2e8f0;
+      background: var(--bg-surface);
     }
     th {
-      font-weight: 700;
-      color: #64748b;
-      background: #f8fafc;
-    }
-    tbody tr:hover {
-      background: #f9fafb;
-    }
-
-    /* Project / event cards */
-    .projects-grid {
-      display: grid;
-      gap: 18px;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    }
-    .project-card {
-      border-radius: var(--r-10);
-      border: 1px solid var(--border);
-      background: #ffffff;
-      box-shadow: var(--shadow-2);
-      padding: 14px 14px 12px;
-    }
-    .project-header-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      align-items: baseline;
-    }
-    .project-title {
-      font-size: 1rem;
-      font-weight: 800;
-      color: var(--ink);
-      margin: 0 0 2px;
-    }
-    .project-badge {
-      font-size: 0.75rem;
-      padding: 4px 9px;
-      border-radius: 999px;
-      background: #e3f2fd;
-      color: #0d47a1;
-      font-weight: 700;
-      white-space: nowrap;
-    }
-    .project-meta {
-      font-size: 0.8rem;
-      color: #64748b;
-      margin-bottom: 4px;
-    }
-    .project-body {
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-    .project-footer {
-      margin-top: 8px;
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      align-items: center;
-      font-size: 0.8rem;
-      color: #64748b;
-    }
-
-    /* Footer (brand kit) */
-    .site-footer {
-      background: linear-gradient(135deg, var(--navy) 0%, #2b338f 100%);
-      color: #fff;
-      padding: 32px 0 26px;
-      border-top: 4px solid var(--green);
-      margin-top: 40px;
-    }
-    .site-footer a {
-      color: #fff;
-      text-decoration: underline;
-    }
-    .foot-grid {
-      display: grid;
-      gap: 20px;
-      grid-template-columns: 2fr 1fr 1fr;
-    }
-    @media (max-width: 900px) {
-      .foot-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* === NEW ADDITIONS: RESOURCES, ARTIFACTS & BRANDING === */
-
-    /* 1. Intellectual Vitality / Bookshelf */
-    .resource-card {
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
+      background: var(--bg-body);
+      text-align: left;
       padding: 16px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--r-10);
-      transition: transform 0.2s;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border);
     }
-    .resource-card:hover {
-      transform: translateY(-2px);
-      border-color: var(--navy);
+    td {
+      padding: 16px;
+      border-bottom: 1px solid var(--border);
     }
-    .resource-icon {
-      flex-shrink: 0;
-      width: 40px;
-      height: 40px;
-      background: var(--stat-bg-2);
-      color: var(--navy);
-      border-radius: 8px;
-      display: grid;
-      place-items: center;
-      font-weight: bold;
-    }
+    tr:last-child td { border-bottom: none; }
 
-    /* 2. Visual Artifacts (Notes Gallery) */
-    .artifact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      gap: 16px;
-      margin-top: 16px;
-    }
-    .artifact-thumb {
-      aspect-ratio: 3/4;
-      background: #e2e8f0;
-      border-radius: var(--r-8);
-      overflow: hidden;
-      border: 1px solid var(--border);
+    /* Timeline */
+    .timeline-item {
+      padding-left: 24px;
+      border-left: 2px solid var(--border);
+      padding-bottom: 32px;
       position: relative;
-      transition: var(--shadow-2);
+    }
+    .timeline-item:last-child { border-left-color: transparent; }
+    .timeline-marker {
+      position: absolute;
+      left: -6px; top: 6px;
+      width: 10px; height: 10px;
+      background: var(--primary);
+      border-radius: 50%;
+    }
+    .timeline-date {
+      font-size: 0.85rem;
+      color: var(--accent);
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 4px;
       display: block;
     }
-    .artifact-thumb:hover {
-      box-shadow: var(--shadow-3);
+    
+    /* Impact / Problem Solving Cards */
+    .impact-split {
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
+      margin-top: auto;
     }
-    .artifact-thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s;
-    }
-    .artifact-thumb:hover img {
-      transform: scale(1.05);
-    }
-    .artifact-caption {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: rgba(26, 35, 126, 0.9);
-      color: #fff;
-      padding: 8px;
+    .impact-label {
       font-size: 0.75rem;
-      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 4px;
+      display: block;
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--text-main);
+      color: white;
+      padding: 60px 0;
       text-align: center;
     }
+    .footer a { color: var(--accent); text-decoration: underline; }
 
-    /* 3. Coach Endorsement Quote */
-    .quote-box {
-      background: var(--stat-bg-2);
-      border-left: 4px solid var(--navy);
-      padding: 20px;
-      border-radius: 0 var(--r-10) var(--r-10) 0;
-      margin-top: 24px;
-    }
-    .quote-text {
-      font-style: italic;
-      color: var(--ink);
-      font-weight: 500;
-      margin-bottom: 12px;
-    }
-    .quote-author {
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--navy);
-    }
-    .quote-role {
-      font-size: 0.75rem;
-      color: var(--muted);
-    }
+    /* Utility */
+    .text-copper { color: var(--accent); }
+    .mt-4 { margin-top: 1.5rem; }
 
-    /* 4. Clickable Brand Badge (Hero) */
-    .hero-link-card {
-      text-decoration: none;
-      transition: all 0.2s ease;
-      cursor: pointer;
+    /* Custom List for Curiosity Section */
+    .list-styled {
+      list-style: none;
+      padding: 0;
+      margin: 0;
     }
-    .hero-link-card:hover {
-      background: #f0fdf4;
-      border-color: var(--green);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-1);
+    .list-styled li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 10px;
+      font-size: 0.95rem;
     }
-    .hero-link-card:hover .hero-meta-value {
-      text-decoration: underline;
-      color: var(--green);
+    .list-styled li::before {
+      content: "•";
+      color: var(--accent);
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-weight: 900;
     }
   </style>
-
-  <!-- Structured data (STUDENT: update name and URL) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Sruthi Gullapalli",
-    "description": "High school student building a math and STEM portfolio with the Active Learning Institute (ActiveSTEM.org).",
-    "url": "https://username.github.io/portfolio/",
-    "affiliation": {
-      "@type": "Organization",
-      "name": "Active Learning Institute",
-      "url": "https://activestem.org"
-    }
-  }
-  </script>
 </head>
 <body>
-  <a href="#main" class="skip">Skip to content</a>
 
-  <!-- HEADER (branded as Active Learning Institute) -->
-  <header class="site-header" role="banner">
-    <div class="container nav">
-      <a class="brand" href="#">
-        <span class="brand-badge">SG</span>
-        <span class="brand-title">
-          <span class="t1">Sruthi Gullapalli</span>
-          <span class="t2">Math &amp; STEM Portfolio</span>
-          <span class="t3">Academic Portfolio</span>
-        </span>
-      </a>
-
-      <button
-        id="menu-toggle"
-        class="menu-toggle"
-        aria-label="Toggle menu"
-        aria-expanded="false"
-        aria-controls="nav-links"
-      >
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          style="pointer-events: none"
-        >
-          <path
-            d="M3 12H21"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-          <path
-            d="M3 6H21"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-          <path
-            d="M3 18H21"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
-      </button>
-
-      <nav id="nav-links" class="nav-links" aria-label="Primary">
+  <!-- NAVIGATION -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo">S. Gullapalli</a>
+      
+      <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">☰</button>
+      
+      <nav class="nav-links">
         <a href="#about">About</a>
         <a href="#academics">Academics</a>
-        <a href="#projects">Projects & Events</a>
+        <a href="#projects">Projects</a>
+        <a href="#impact">Impact</a>
         <a href="#leadership">Leadership</a>
-        <a href="#notes">Notes</a>
-        <a href="#exams">Exams</a>
-        <a href="#timeline">Timeline</a>
-        <a href="#contact" class="btn btn--secondary">Contact</a>
+        <a href="#curiosity">Curiosity</a>
+        <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main id="main">
-    <!-- HERO: Student Name + quick meta -->
-    <section class="hero">
-      <div class="container hero-layout">
+  <!-- HERO SECTION -->
+  <section class="hero" id="about">
+    <div class="container">
+      <div class="hero-grid">
+        <!-- Left: Text -->
         <div>
-          <div class="kicker">Student Portfolio</div>
-          <!-- STUDENT: Update the image file path to your own photo in this repo -->
-          <img
-            src="images/sruthi-portrait.jpg"
-            alt="Portrait of Sruthi Gullapalli"
-            class="hero-avatar"
-          />
-          <h1><!-- STUDENT: Your full name -->Sruthi Gullapalli</h1>
-          <p class="lead">
-            <!-- STUDENT: 2–3 lines describing yourself -->
-            High school student with a growing interest in mathematics, problem
-            solving, and STEM. This portfolio is built under the guidance of the
-            Active Learning Institute (ActiveSTEM.org) to track my coursework,
-            projects, and long-term growth.
+          <span class="hero-kicker">Student Portfolio · Class of 2027</span>
+          <h1>Aspiring Medical Professional & <span style="font-style: italic; color: var(--accent);">STEM Leader</span></h1>
+          <p class="hero-lead">
+            High school student at <strong>Francis Howell High School</strong> passionate about bridging mathematics, science, and healthcare to make a meaningful community impact.
           </p>
-
-          <div class="row" style="margin-top: 18px">
-            <!-- STUDENT: Update resume link if you have one -->
-            <a href="#" class="btn btn--primary">Download Resume (PDF)</a>
-            <a href="#projects" class="btn btn--quiet">View Highlights</a>
+          
+          <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+            <a href="#projects" class="btn btn-primary">View Highlights</a>
+            <a href="#contact" class="btn btn-outline">Contact Me</a>
           </div>
 
-          <div class="hero-meta-grid">
-            <div class="hero-meta-card">
-              <div class="hero-meta-label">Grade & School</div>
-              <div class="hero-meta-value">
-                <!-- STUDENT: e.g. 10th Grade, Parkway South High School -->
-                10th Grade, High School Name
-              </div>
+          <!-- Quick Stats Row -->
+          <div class="stats-row">
+            <div class="stat-item">
+              <strong>10th</strong>
+              <span>Grade</span>
             </div>
-            <div class="hero-meta-card">
-              <div class="hero-meta-label">Academic Focus</div>
-              <div class="hero-meta-value">
-                Algebra II · Pre-Calculus · ACT Math Readiness
-              </div>
+            <div class="stat-item">
+              <strong>STEM</strong>
+              <span>Focus Track</span>
             </div>
-            <a
-              href="https://activestem.org"
-              target="_blank"
-              rel="noopener"
-              class="hero-meta-card hero-link-card"
-              title="View Program Details"
-            >
-              <div class="hero-meta-label">Program &amp; Mentorship</div>
-              <div class="hero-meta-value" style="color: var(--navy); font-weight: 700">
-                ActiveSTEM Cohort ↗
-              </div>
-              <div style="font-size: 0.75rem; color: var(--muted); margin-top: 2px">
-                Dir. Prof. Vinay Kodipelly
-              </div>
-            </a>
+            <div class="stat-item">
+              <strong>4.0+</strong>
+              <span>Target GPA</span>
+            </div>
           </div>
         </div>
 
-        <aside class="surface" style="padding: 18px">
-          <h3>Current Goals</h3>
-          <ul class="list">
-            <li>Write full step-by-step solutions in algebra and functions.</li>
-            <li>Build disciplined note-taking for school and coaching sessions.</li>
-            <li>Prepare early for ACT / AP-level mathematics.</li>
-          </ul>
-
-          <h3 style="margin-top: 16px">Quick Highlights</h3>
-          <ul class="list">
-            <!-- STUDENT: Replace with your own highlights -->
-            <li>Participated in an ActiveSTEM Math Marathon event.</li>
-            <li>Regularly works on problems beyond school textbook level.</li>
-            <li>Building this GitHub-based portfolio from scratch.</li>
-          </ul>
-        </aside>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="section">
-      <div class="container">
-        <div class="section-header">
-          <div class="kicker">About Me</div>
-          <h2>Who I Am & What I’m Working Towards</h2>
-          <p>
-            <!-- STUDENT: short, honest context -->
-            A brief introduction, your interests, and where you see yourself going.
-          </p>
+        <!-- Right: Image -->
+        <div class="hero-avatar-wrapper">
+          <img src="image_328346.jpg" alt="Sruthi Gullapalli" class="hero-avatar" />
         </div>
-
-        <div class="split">
-          <article class="card fade-in-up">
-            <h3>Short Bio</h3>
-            <p>
-              <!-- STUDENT: 1–2 paragraphs in your own words -->
-              I am a 10th-grade student who enjoys mathematics, science, and
-              technology. Through the Active Learning Institute, I am learning how
-              to explain my work clearly, reflect on my mistakes, and not depend
-              only on answer keys.
-            </p>
-            <p>
-              I use this portfolio to track projects, events, mock exams, and
-              selected notes so that I can look back at my progress and prepare
-              strongly for future opportunities.
-            </p>
-          </article>
-
-          <aside class="card fade-in-up">
-            <h3>At a Glance</h3>
-            <div class="row--tight" style="margin-bottom: 4px">
-              <span class="chip" data-variant="grade">Grade: 10</span>
-              <span class="chip" data-variant="tag">STEM Track</span>
-            </div>
-            <ul class="list">
-              <li><strong>Interests:</strong> Mathematics, data, coding.</li>
-              <li><strong>Planned Path:</strong> Engineering / Computer Science.</li>
-              <li><strong>Strengths:</strong> Logical reasoning, pattern spotting.</li>
-              <li><strong>Working On:</strong> Step-by-step writing, exam timing.</li>
-            </ul>
-            <div class="quote-box fade-in-up">
-              <div class="quote-text">
-                "Sruthi has demonstrated a remarkable ability not just to solve problems, but to deconstruct her own errors. Her dedication to 'full-solution' writing sets her apart."
-              </div>
-              <div class="quote-author">Prof. Vinay Kodipelly</div>
-              <div class="quote-role">
-                Active Learning Institute
-              </div>
-            </div>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <!-- ACADEMICS -->
-    <section id="academics" class="section section--bg-card">
-      <div class="container">
-        <div class="section-header">
-          <div class="kicker">Academics</div>
-          <h2>Courses & Skill Focus</h2>
-          <p>
-            Key math and STEM courses, plus what I am building through ActiveSTEM
-            coaching.
-          </p>
-        </div>
-
-        <div class="grid-2">
-          <article class="card fade-in-up">
-            <h3>Current & Recent Courses</h3>
-            <div class="table-wrapper">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Course</th>
-                    <th>Level</th>
-                    <th>Where</th>
-                    <th>Notes</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <!-- STUDENT: replace with your own entries -->
-                  <tr>
-                    <td>Algebra II</td>
-                    <td>Honors</td>
-                    <td>School</td>
-                    <td>Functions, quadratics, exponentials.</td>
-                  </tr>
-                  <tr>
-                    <td>Pre-Calculus Foundations</td>
-                    <td>Enrichment</td>
-                    <td>Active Learning Institute</td>
-                    <td>Previewing trig, vectors, and limits.</td>
-                  </tr>
-                  <tr>
-                    <td>ACT Math Prep</td>
-                    <td>Coaching</td>
-                    <td>Active Learning Institute</td>
-                    <td>Strengthening speed with written work.</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </article>
-
-          <aside class="card fade-in-up">
-            <h3>Skill Focus</h3>
-            <ul class="list">
-              <li>Writing solutions fully, not jumping from question to answer.</li>
-              <li>Translating word problems into equations and inequalities.</li>
-              <li>Checking units, reasonableness, and final answer format.</li>
-              <li>Building summary sheets from my own class notes.</li>
-            </ul>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <section id="reading" class="section">
-      <div class="container">
-        <div class="section-header">
-          <div class="kicker">Intellectual Vitality</div>
-          <h2>Reading &amp; Self-Study</h2>
-          <p>Books, papers, and resources I am exploring beyond the curriculum.</p>
-        </div>
-
-        <div class="grid-2">
-          <a href="#" class="resource-card fade-in-up">
-            <div class="resource-icon">📖</div>
-            <div>
-              <h3 style="font-size: 1rem; margin: 0 0 4px">Infinite Powers (Strogatz)</h3>
-              <p style="font-size: 0.85rem; margin: 0; color: var(--muted)">
-                Reading to understand the historical development of Calculus before taking the course.
-              </p>
-              <div style="margin-top:8px; font-size:0.75rem; color:var(--green); font-weight:700">
-                Status: In Progress
-              </div>
-            </div>
-          </a>
-
-          <a href="#" class="resource-card fade-in-up">
-            <div class="resource-icon">📄</div>
-            <div>
-              <h3 style="font-size: 1rem; margin: 0 0 4px">Introduction to R for Data Science</h3>
-              <p style="font-size: 0.85rem; margin: 0; color: var(--muted)">
-                 Self-paced online module to learn basic data visualization techniques.
-              </p>
-               <div style="margin-top:8px; font-size:0.75rem; color:var(--navy); font-weight:700">
-                Status: Completed
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECTS & EVENTS -->
-    <section id="projects" class="section">
-      <div class="container">
-        <div class="section-header">
-          <div class="kicker">Projects & Events</div>
-          <h2>Competitions, Challenges & Learning Experiences</h2>
-          <p>
-            A selection of events and projects that pushed me beyond regular
-            homework.
-          </p>
-        </div>
-
-        <div class="projects-grid">
-          <!-- STUDENT: duplicate project-card blocks as needed -->
-          <article class="project-card fade-in-up">
-            <div class="project-header-row">
-              <h3 class="project-title">ActiveSTEM Math Marathon</h3>
-              <span class="project-badge">Event · Team</span>
-            </div>
-            <div class="project-meta">Month Year · St. Louis, Missouri</div>
-            <p class="project-body">
-              Took part in an intensive ACT-style math marathon where our team
-              worked through a large set of timed questions. Learned to balance
-              speed and accuracy and to write clearer working under pressure.
-            </p>
-            <div class="project-footer">
-              <span>Skills: pacing, error checking, teamwork</span>
-              <!-- STUDENT: link to a reflection page if you have one -->
-              <a href="#">Reflection / Notes</a>
-            </div>
-          </article>
-
-          <article class="project-card fade-in-up">
-            <div class="project-header-row">
-              <h3 class="project-title">Math Bowl Preparation</h3>
-              <span class="project-badge">Competition Prep</span>
-            </div>
-            <div class="project-meta">Month Year · Active Learning Institute</div>
-            <p class="project-body">
-              Practised contest-level questions in algebra, functions, and data.
-              Focused on step-by-step solutions and explaining my reasoning to
-              others.
-            </p>
-            <div class="project-footer">
-              <span>Skills: contest thinking, clarity of solutions</span>
-            </div>
-          </article>
-
-          <article class="project-card fade-in-up">
-            <div class="project-header-row">
-              <h3 class="project-title">Notes-as-Portfolio Initiative</h3>
-              <span class="project-badge">Learning Artifact</span>
-            </div>
-            <div class="project-meta">Ongoing · With ActiveSTEM Coach</div>
-            <p class="project-body">
-              Started scanning and uploading key pages from my notebooks so they
-              become part of this portfolio. This helps me see how my writing
-              and organisation improve over time.
-            </p>
-            <div class="project-footer">
-              <span>Skills: organisation, reflection, consistency</span>
-              <a href="#notes">View notes section</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- LEADERSHIP & SERVICE -->
-    <section id="leadership" class="section section--bg-card">
-      <div class="container">
-        <div class="section-header">
-          <div class="kicker">Leadership</div>
-          <h2>Leadership & Contribution</h2>
-          <p>
-            Ways I support others, take initiative, and participate in the learning community.
-          </p>
-        </div>
-
-        <div class="grid-2">
-          <article class="card fade-in-up">
-            <h3>Roles & Activities</h3>
-            <div class="timeline">
-              <!-- STUDENT: add or edit timeline items -->
-              <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-title">Peer Math Helper</div>
-                <div class="timeline-meta">2025 · Active Learning Institute sessions</div>
-                <div class="timeline-body">
-                  Assisted peers in factorisation, equations, and function graph
-                  questions during group work, focusing on explaining steps
-                  clearly.
-                </div>
-              </div>
-
-              <div class="timeline-item">
-                <div class="timeline-dot"></div>
-                <div class="timeline-title">School / Library Programs</div>
-                <div class="timeline-meta">School or Local Library · Ongoing</div>
-                <div class="timeline-body">
-                  Participated in school or library activities related to math,
-                  STEM, or reading. (Update this with your specific examples.)
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <aside class="card fade-in-up">
-            <h3>What I’m Learning About Leadership</h3>
-            <ul class="list">
-              <li>Encouraging others to show their full work, not just answers.</li>
-              <li>Asking guiding questions instead of giving direct solutions.</li>
-              <li>Staying calm and organised when there is time pressure.</li>
-            </ul>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <!-- NOTES / LEARNING ARTIFACTS -->
-    <section id="notes" class="section">
-      <div class="container">
-        <div class="section-header">
-          <div class="kicker">Notes & Work</div>
-          <h2>Selected Notes & Learning Artifacts</h2>
-          <p>
-            Evidence of how I work, not just what score I got.
-          </p>
-        </div>
-
-        <div class="grid-2">
-          <article class="card fade-in-up">
-            <h3>Artifact Gallery</h3>
-            <p style="margin-bottom:12px">Snapshots of my problem-solving process and summary sheets.</p>
-            
-            <div class="artifact-grid">
-              <a href="#" class="artifact-thumb">
-                <img src="https://placehold.co/300x400/e2e8f0/1e293b?text=Notes+Page" alt="Quadratic Notes Page" />
-                <div class="artifact-caption">Quadratics Summary</div>
-              </a>
-              
-              <a href="#" class="artifact-thumb">
-                <img src="https://placehold.co/300x400/e2e8f0/1e293b?text=Work+Sample" alt="Trig Circle Handout" />
-                <div class="artifact-caption">Unit Circle Derivation</div>
-              </a>
-              
-              <a href="#" class="artifact-thumb">
-                <img src="https://placehold.co/300x400/e2e8f0/1e293b?text=Error+Log" alt="Mistake Analysis" />
-                <div class="artifact-caption">Error Analysis Log</div>
-              </a>
-            </div>
-          </article>
-
-          <aside class="card fade-in-up">
-            <h3>Methodology</h3>
-            <p>
-              My problem-solving process follows the 
-              <a href="https://activestem.org" target="_blank" style="font-weight:700; color:var(--navy)">
-                ActiveSTEM Framework
-              </a>:
-            </p>
-            <ul class="list">
-              <li><strong>Structure:</strong> Full written solutions (no skipped steps).</li>
-              <li><strong>Reflection:</strong> Using the <em style="color:var(--green)">"Error Analysis Log"</em> to track why mistakes happen.</li>
-              <li><strong>Consistency:</strong> Weekly review of concept maps.</li>
-            </ul>
-          </aside>
-        </div>
-      </div>
-    </section>
-
-    <!-- EXAMS & BENCHMARKS -->
-    <section id="exams" class="section section--bg-card">
-      <div class="container">
-        <div class="section-header">
-          <div class="kicker">Exams & Benchmarks</div>
-          <h2>Key Assessments & Progress</h2>
-          <p>
-            A simple record of important tests and what I learnt from them.
-          </p>
-        </div>
-
-        <article class="card fade-in-up">
-          <h3>Selected Assessments</h3>
-          <div class="table-wrapper">
-            <table>
-              <thead>
-                <tr>
-                  <th>Exam / Test</th>
-                  <th>Date</th>
-                  <th>Score / Result</th>
-                  <th>Reflection</th>
-                </tr>
-              </thead>
-              <tbody>
-                <!-- STUDENT: update as you go -->
-                <tr>
-                  <td>ACT Math Diagnostic</td>
-                  <td>Month Year</td>
-                  <td>Score (e.g. 24/36)</td>
-                  <td>First benchmark; identified algebra and word-problem gaps.</td>
-                </tr>
-                <tr>
-                  <td>Algebra II Midterm</td>
-                  <td>Month Year</td>
-                  <td>Grade / %</td>
-                  <td>Lost marks mainly due to skipped steps and minor mistakes.</td>
-                </tr>
-                <tr>
-                  <td>ActiveSTEM Practice Set – Algebra Review</td>
-                  <td>Month Year</td>
-                  <td>Completion / Accuracy</td>
-                  <td>Used to practise neat, complete solutions under light timing.</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- TIMELINE -->
-    <section id="timeline" class="section">
-      <div class="container">
-        <div class="section-header">
-          <div class="kicker">Timeline</div>
-          <h2>Timeline of Growth</h2>
-          <p>
-            Major turning points in my learning journey so far.
-          </p>
-        </div>
-
-        <article class="card fade-in-up">
-          <div class="timeline">
-            <!-- STUDENT: add milestones -->
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-title">Started Coaching with Active Learning Institute</div>
-              <div class="timeline-meta">Month Year</div>
-              <div class="timeline-body">
-                Began structured sessions focusing on foundations, written work,
-                and exam skills.
-              </div>
-            </div>
-
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-title">First Math Marathon / Bowl</div>
-              <div class="timeline-meta">Month Year</div>
-              <div class="timeline-body">
-                Experienced contest-style questions under time pressure and
-                learnt to manage pacing.
-              </div>
-            </div>
-
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-title">Launched This Portfolio Website</div>
-              <div class="timeline-meta">Month Year</div>
-              <div class="timeline-body">
-                Set up this GitHub Pages site to organise my work and make it
-                easier to reflect and share.
-              </div>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section section--bg-card">
-      <div class="container">
-        <div class="section-header">
-          <div class="kicker">Contact</div>
-          <h2>Contact & Profiles</h2>
-          <p>
-            For academic purposes, program applications, or recommendation support.
-          </p>
-        </div>
-
-        <div class="grid-2">
-          <article class="card fade-in-up">
-            <h3>Student Contact</h3>
-            <p>
-              <!-- STUDENT: use a professional email -->
-              Email:
-              <a href="mailto:student.email@example.com"
-                >student.email@example.com</a
-              >
-            </p>
-            <p>
-              GitHub:
-              <a href="https://github.com/username">github.com/username</a>
-            </p>
-            <p>
-              <!-- Optional -->
-              LinkedIn:
-              <a href="#">LinkedIn Profile (optional)</a>
-            </p>
-          </article>
-
-          <aside class="card fade-in-up">
-            <h3>Notes</h3>
-            <p>
-              This portfolio is for academic, competition, and college-readiness
-              purposes. All sample work is my own or created under guidance in
-              coaching sessions with the Active Learning Institute.
-            </p>
-          </aside>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER (branded; gives you SEO + credit on every student site) -->
-  <footer class="site-footer" role="contentinfo">
-    <div class="container foot-grid">
-      <div>
-        <h3 style="color: #fff; margin-top: 0">About This Portfolio</h3>
-        <p style="margin-top: -6px; opacity: 0.9">
-          Personal academic portfolio for Sruthi Gullapalli, focused on math and STEM growth.
-        </p>
-        <p style="margin-top: 8px; font-size: 0.85rem; opacity: 0.9">
-          HTML portfolio template created by Prof. Vinay Kanth Rao Kodipelly
-          for the <a href="https://activestem.org" target="_blank" rel="noopener">Active Learning Institute (ActiveSTEM.org)</a>
-          and released under the MIT License for student use.
-        </p>
-      </div>
-      <div>
-        <h3 style="color: #fff; margin-top: 0; font-size: 1rem">
-          Mentorship &amp; Pedagogy
-        </h3>
-        <ul class="list" style="margin-top: 0.4rem; list-style: none; padding: 0;">
-          <li style="padding-left: 0; margin-bottom: 8px;">
-            This portfolio was developed under the guidance of 
-            <strong>Prof. Vinay Kanth Rao Kodipelly</strong>.
-          </li>
-          <li style="padding-left: 0;">
-            <a 
-              href="https://activestem.org" 
-              target="_blank" 
-              rel="noopener"
-              style="
-                display: inline-block;
-                background: rgba(255,255,255,0.1);
-                padding: 8px 12px;
-                border-radius: 6px;
-                text-decoration: none;
-                font-weight: 600;
-                font-size: 0.85rem;
-                border: 1px solid rgba(255,255,255,0.2);
-                transition: 0.2s;
-              "
-              onmouseover="this.style.background='rgba(255,255,255,0.2)'"
-              onmouseout="this.style.background='rgba(255,255,255,0.1)'"
-            >
-              Explore the Active Learning Institute →
-            </a>
-          </li>
-        </ul>
       </div>
     </div>
-    <div
-      class="container"
-      style="margin-top: 14px; opacity: 0.85; font-size: 0.9rem"
-    >
-      © <span id="y"></span> Sruthi Gullapalli (portfolio content).
-      Template © <span id="y"></span> Prof. Vinay Kanth Rao Kodipelly, Active Learning Institute (ActiveSTEM.org). MIT License.
+  </section>
+
+  <!-- BIO & STRENGTHS SECTION -->
+  <section class="section">
+    <div class="container grid grid-sidebar">
+      
+      <!-- Main Bio -->
+      <div>
+        <h2>Academic Statement</h2>
+        <div style="font-size: 1.1rem;">
+          <p>
+            I am a 10th-grade student with a strong interest in mathematics, science, and technology. Through the Active Learning Institute, I am developing important academic skills such as clearly explaining my thinking, reflecting on mistakes, and learning beyond simply relying on answer keys.
+          </p>
+          <p>
+            I have a deep passion for pursuing a career in the medical field, especially inspired by the medical challenges my family in India has faced. Seeing these experiences has motivated me to want to help others and make a meaningful impact through healthcare. This passion continues to drive my academic goals and personal growth.
+          </p>
+          <p>
+            Another area I am deeply passionate about is leadership. Through the Active Learning Institute, I have had the opportunity to grow as a leader by hosting and organizing events for children in our community. These events focus on spreading knowledge and skills such as medical awareness, effective note-taking, and ACT skill improvement. Being able to guide and support others has strengthened my confidence and reinforced my desire to serve my community.
+          </p>
+          <p>
+            I use this portfolio to document my projects, events, mock exams, and selected notes so that I can reflect on my progress and prepare strongly for future opportunities.
+          </p>
+        </div>
+      </div>
+
+      <!-- Sidebar: At a Glance -->
+      <div>
+        <div class="card">
+          <h3>Strengths & Interests</h3>
+          <ul style="padding-left: 20px; margin-bottom: 24px;">
+            <li>Creativity & Versatility</li>
+            <li>Leadership & Initiative</li>
+            <li>Growth Mindset</li>
+            <li>Early Commitment to Medicine</li>
+          </ul>
+          
+          <hr style="border: 0; border-top: 1px solid var(--border); margin: 20px 0;">
+          
+          <h3>Quick Highlights</h3>
+          <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
+            <li style="margin-bottom: 12px;">🏆 Award-winning pianist & Indian classical vocalist.</li>
+            <li style="margin-bottom: 12px;">🧬 Senior Science Bee Competitor.</li>
+            <li style="margin-bottom: 12px;">📊 ActiveSTEM Math Marathon Participant.</li>
+            <li style="margin-bottom: 12px;">💻 Built this site from scratch.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ACADEMICS SECTION -->
+  <section class="section" id="academics" style="background: white;">
+    <div class="container">
+      <div style="max-width: 800px; margin-bottom: 40px;">
+        <span class="hero-kicker">Coursework</span>
+        <h2>Academic Focus</h2>
+        <p>Current coursework emphasizing <strong>AP Biology, Chemistry, Pre-Calculus, and ACT Math Readiness</strong>.</p>
+      </div>
+
+      <div class="grid grid-2">
+        <!-- Goals Card -->
+        <div class="card">
+          <h3>Current Goals</h3>
+          <ul class="timeline" style="margin-top: 24px; list-style: none; padding-left: 0;">
+             <li class="timeline-item">
+              <span class="timeline-marker"></span>
+              <span class="timeline-date">Academic</span>
+              Write clear, step-by-step solutions in algebra and functions.
+            </li>
+            <li class="timeline-item">
+              <span class="timeline-marker"></span>
+              <span class="timeline-date">Standardized Testing</span>
+              Prepare early for ACT and AP-level mathematics.
+            </li>
+            <li class="timeline-item">
+              <span class="timeline-marker"></span>
+              <span class="timeline-date">Leadership</span>
+              Start a medical-focused club at Francis Howell High School.
+            </li>
+             <li class="timeline-item">
+              <span class="timeline-marker"></span>
+              <span class="timeline-date">Research</span>
+              Begin a research paper to broaden understanding of the medical field.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Course Table -->
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Subject</th>
+                <th>Level</th>
+                <th>Focus Area</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Algebra II</strong></td>
+                <td>Honors</td>
+                <td>Functions, Quadratics</td>
+              </tr>
+              <tr>
+                <td><strong>Pre-Calculus</strong></td>
+                <td>Enrichment</td>
+                <td>Trig, Vectors, Limits</td>
+              </tr>
+              <tr>
+                <td><strong>AP Biology</strong></td>
+                <td>AP / Advanced</td>
+                <td>Molecular Bio, Genetics</td>
+              </tr>
+              <tr>
+                <td><strong>Chemistry</strong></td>
+                <td>Honors</td>
+                <td>Stoichiometry, Lab Work</td>
+              </tr>
+               <tr>
+                <td><strong>ACT Prep</strong></td>
+                <td>Coaching</td>
+                <td>Math Readiness & Speed</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section class="section" id="projects">
+    <div class="container">
+      <span class="hero-kicker">Portfolio</span>
+      <h2>Projects & Engagement</h2>
+      
+      <div class="grid grid-3 mt-4">
+        <!-- Project 1 -->
+        <div class="card">
+          <span class="badge badge-accent">Math & Logic</span>
+          <h3 style="margin-top: 16px;">ActiveSTEM Math Marathon</h3>
+          <p style="font-size: 0.95rem;">
+             Participated in an intensive ACT-style math marathon. Focused on balancing speed and accuracy while documenting full solution steps under pressure.
+          </p>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="card">
+          <span class="badge badge-accent">Competition</span>
+          <h3 style="margin-top: 16px;">Math Bowl Prep</h3>
+          <p style="font-size: 0.95rem;">
+             Practised contest-level questions in algebra and data analysis. Developed skills in clearly explaining reasoning to peers and mentors.
+          </p>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="card">
+          <span class="badge badge-accent">Technology</span>
+          <h3 style="margin-top: 16px;">Digital Portfolio</h3>
+          <p style="font-size: 0.95rem;">
+             Designed and built this GitHub-based portfolio from scratch to document academic milestones, notes, and personal growth over time.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPACT SECTION -->
+  <section class="section" id="impact" style="background: white;">
+    <div class="container">
+      <span class="hero-kicker">Initiative</span>
+      <h2>Problems I Noticed & Action Taken</h2>
+      <p style="max-width: 600px; margin-bottom: 40px;">
+        Identifying challenges in my community and taking proactive steps to solve them.
+      </p>
+
+      <!-- Changed from grid-3 to grid-2 for a balanced 2x2 layout -->
+      <div class="grid grid-2">
+        <!-- Example 1 (Medical Club) -->
+        <div class="card">
+          <div>
+             <span class="impact-label">The Problem</span>
+             <h4>Lack of Medical Awareness Among Peers</h4>
+             <p style="font-size: 0.95rem;">
+               Many students are interested in medicine but lack understanding of the diverse career paths and public health issues affecting our community.
+             </p>
+          </div>
+          <div class="impact-split">
+             <span class="impact-label">What I Did</span>
+             <p style="font-size: 0.95rem;">
+               I am organizing a medical-focused club at school to host guest speakers, discuss public health topics, and connect students with shadowing opportunities.
+             </p>
+          </div>
+        </div>
+
+        <!-- Example 2 (Note Taking) -->
+        <div class="card">
+          <div>
+             <span class="impact-label">The Problem</span>
+             <h4>Ineffective Note-Taking Strategies</h4>
+             <p style="font-size: 0.95rem;">
+               I noticed that many peers, including myself, struggled to retain information because we were just copying slides rather than synthesizing information.
+             </p>
+          </div>
+          <div class="impact-split">
+             <span class="impact-label">What I Did</span>
+             <p style="font-size: 0.95rem;">
+               I developed a disciplined note-taking system during my coaching sessions and now host events to teach these effective study skills to younger students.
+             </p>
+          </div>
+        </div>
+
+        <!-- Example 3 (CPR Awareness) -->
+        <div class="card">
+          <div>
+             <span class="impact-label">The Problem</span>
+             <h4>Lack of Basic First Aid Knowledge in Kids</h4>
+             <p style="font-size: 0.95rem;">
+               I noticed that young children often lack an understanding of basic medicine and CPR, which are critical skills during life-threatening situations.
+             </p>
+          </div>
+          <div class="impact-split">
+             <span class="impact-label">What I Did</span>
+             <p style="font-size: 0.95rem;">
+               I organized an interactive event where children practiced with CPR dummies and learned the fundamentals of medicine in a hands-on environment.
+             </p>
+          </div>
+        </div>
+
+        <!-- Example 4 (Magic Makers) -->
+        <div class="card">
+          <div>
+             <span class="impact-label">The Problem</span>
+             <h4>Support for Vulnerable Children</h4>
+             <p style="font-size: 0.95rem;">
+               My peers and I noticed that local children's hospitals and shelters for homeless youth were in need of additional resources, funding, and community support.
+             </p>
+          </div>
+          <div class="impact-split">
+             <span class="impact-label">What We Did</span>
+             <p style="font-size: 0.95rem;">
+               Co-founded "Magic Makers," a volunteer group that organizes fundraisers like hot chocolate stands. We donate proceeds to children's hospitals while earning service hours.
+             </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- LEADERSHIP PHILOSOPHY SECTION -->
+  <section class="section" id="leadership">
+    <div class="container">
+      <span class="hero-kicker">Philosophy</span>
+      <h2>My Leadership Style</h2>
+      <p style="max-width: 600px; margin-bottom: 40px;">
+        Reflecting on the core values that drive my actions and how I strive to support those around me.
+      </p>
+      
+      <div class="grid grid-3">
+        <div class="card">
+            <h4>What kind of leader am I?</h4>
+            <p style="font-size: 0.95rem;">I am a leader who notices when something isn’t working and takes initiative to improve it. I believe leadership is about being dependable, prepared, and willing to step up even when it’s uncomfortable. I don’t lead to stand out, but to make things clearer and more organized for everyone involved.</p>
+        </div>
+        <div class="card">
+            <h4>How do I help others succeed?</h4>
+             <p style="font-size: 0.95rem;">I help others succeed by making things feel less overwhelming. I break down information, share what I’ve learned, and create structure so people feel more confident and supported. I try to be patient and approachable, because I know learning is easier when people don’t feel judged.</p>
+        </div>
+        <div class="card">
+            <h4>What values guide my decisions?</h4>
+            <p style="font-size: 0.95rem;">The values that guide my decisions are growth, empathy, and accountability. I believe growth comes from effort and learning from mistakes. Empathy helps me understand others and lead with care. Accountability keeps me responsible for my actions and commitments, even when things are challenging.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEW SECTION: WHAT I'M CURIOUS ABOUT -->
+  <section class="section" id="curiosity" style="background: white;">
+    <div class="container">
+      <span class="hero-kicker">Inquiry</span>
+      <h2>What I'm Curious About</h2>
+      <p style="max-width: 600px; margin-bottom: 40px;">
+        Exploring the intersection of medicine, cognitive science, and technology through hands-on experimentation and big questions.
+      </p>
+
+      <div class="grid grid-2">
+        
+        <!-- Exploration -->
+        <div class="card">
+          <h4>Hands-on Experiments & Exploration</h4>
+          <ul class="list-styled">
+            <li>Observing patterns in note-taking, memory, or learning and how it could relate to cognitive science.</li>
+            <li>Exploring how lifestyle choices affect long-term health.</li>
+          </ul>
+        </div>
+
+        <!-- Healthcare Leadership -->
+        <div class="card">
+          <h4>Healthcare & Leadership</h4>
+          <ul class="list-styled">
+            <li>How to make medical education more accessible.</li>
+            <li>Ways to improve communication between doctors, patients, and families.</li>
+          </ul>
+        </div>
+
+        <!-- Emerging Topics -->
+        <div class="card">
+          <h4>Emerging Medical Topics</h4>
+          <ul class="list-styled">
+            <li><strong>AI in healthcare:</strong> How technology could help diagnose or monitor patients faster.</li>
+          </ul>
+        </div>
+
+        <!-- Big Questions -->
+        <div class="card">
+          <h4>Big "What If" Questions</h4>
+          <ul class="list-styled">
+            <li>What if wearable tech could predict illnesses before symptoms appear?</li>
+            <li>How can communities be designed to encourage healthier living?</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT / FOOTER -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <h2>Let's Connect</h2>
+      <p style="opacity: 0.8; max-width: 600px; margin: 0 auto 32px;">
+        I am always open to discussing academic opportunities, medical research, or community leadership initiatives.
+      </p>
+      
+      <div style="margin-bottom: 40px;">
+        <a href="mailto:glsruthi07@gmail.com" class="btn btn-outline" style="border-color: white; color: white;">glsruthi07@gmail.com</a>
+        <a href="tel:6366756812" class="btn btn-outline" style="border-color: white; color: white; margin-left: 16px;">(636) 675-6812</a>
+        <a href="https://github.com/username" class="btn btn-outline" style="border-color: white; color: white; margin-left: 16px;">GitHub</a>
+      </div>
+
+      <div style="font-size: 0.85rem; opacity: 0.6; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 24px;">
+        <p>&copy; <span id="year"></span> Sruthi Gullapalli. Built with Active Learning Institute.</p>
+      </div>
     </div>
   </footer>
 
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      // Set footer year
-      const yearEl = document.getElementById("y");
-      if (yearEl) {
-        yearEl.textContent = new Date().getFullYear();
-      }
-
-      // Mobile menu toggle
-      const menuToggle = document.getElementById("menu-toggle");
-      const navLinks = document.getElementById("nav-links");
-
-      if (menuToggle && navLinks) {
-        menuToggle.addEventListener("click", () => {
-          const isExpanded = navLinks.classList.toggle("show");
-          menuToggle.setAttribute("aria-expanded", String(isExpanded));
-        });
-
-        navLinks.addEventListener("click", (e) => {
-          if (e.target.matches("a")) {
-            navLinks.classList.remove("show");
-            menuToggle.setAttribute("aria-expanded", "false");
-          }
-        });
-      }
-
-      // Scroll animations for .fade-in-up
-      const animatedEls = document.querySelectorAll(".fade-in-up");
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("is-visible");
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.1 }
-      );
-
-      animatedEls.forEach((el) => observer.observe(el));
-    });
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
