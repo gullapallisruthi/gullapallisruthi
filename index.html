@@ -33,42 +33,33 @@
   <style>
     /* =========================================================
        DESIGN TOKENS: "MODERN IVY LEAGUE" THEME
-       Deep Forest Green + Copper + Stone
        ========================================================= */
 
     :root {
-      /* Palette */
-      --primary: #064E3B;    /* Deep Forest Green (Prestigious) */
+      --primary: #064E3B;    /* Deep Forest Green */
       --primary-light: #065f46;
-      --accent: #D97706;     /* Copper/Amber (Energy & Highlight) */
+      --accent: #D97706;     /* Copper/Amber */
       --accent-soft: #FEF3C7; 
       
-      --text-main: #1C1917;  /* Warm Black */
-      --text-muted: #57534E; /* Stone Gray */
+      --text-main: #1C1917;  
+      --text-muted: #57534E; 
       --text-light: #A8A29E;
       
-      --bg-body: #FAFAF9;    /* Warm Stone White (Not harsh white) */
+      --bg-body: #FAFAF9;    
       --bg-surface: #FFFFFF;
-      --border: #E7E5E4;     /* Warm Light Gray */
+      --border: #E7E5E4;     
 
-      /* Typography */
       --font-heading: "Playfair Display", serif;
       --font-body: "Lato", sans-serif;
 
-      /* Spacing */
       --container: 1100px;
-      --radius: 4px; /* Sharper corners for a more professional look */
+      --radius: 4px; 
       
-      /* Shadows (Softer, diffused) */
       --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
       --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
       --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     }
 
-    /* =========================================================
-       BASE STYLES
-       ========================================================= */
-    
     * { box-sizing: border-box; }
     
     body {
@@ -78,7 +69,7 @@
       font-family: var(--font-body);
       font-weight: 400;
       line-height: 1.7;
-      font-size: 1.05rem; /* Slightly larger for readability */
+      font-size: 1.05rem; 
     }
 
     h1, h2, h3, h4 {
@@ -97,24 +88,11 @@
     a:hover { color: var(--accent); }
     img { max-width: 100%; display: block; }
 
-    /* Layout */
-    .container {
-      max-width: var(--container);
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    .section {
-      padding: 80px 0;
-      border-bottom: 1px solid var(--border);
-    }
+    .container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
+    .section { padding: 80px 0; border-bottom: 1px solid var(--border); }
     .section:last-child { border-bottom: none; }
 
-    /* Grid System */
-    .grid {
-      display: grid;
-      gap: 32px;
-    }
+    .grid { display: grid; gap: 32px; }
     .grid-2 { grid-template-columns: repeat(2, 1fr); }
     .grid-3 { grid-template-columns: repeat(3, 1fr); }
     .grid-sidebar { grid-template-columns: 2fr 1fr; }
@@ -124,114 +102,43 @@
       .section { padding: 60px 0; }
     }
 
-    /* =========================================================
-       COMPONENTS
-       ========================================================= */
-
-    /* Buttons - Editorial Style */
     .btn {
-      display: inline-block;
-      padding: 12px 24px;
-      font-family: var(--font-body);
-      font-weight: 700;
-      text-transform: uppercase;
-      font-size: 0.85rem;
-      letter-spacing: 0.05em;
-      border-radius: var(--radius);
-      transition: all 0.2s;
-      border: 2px solid transparent;
-      cursor: pointer;
+      display: inline-block; padding: 12px 24px; font-family: var(--font-body);
+      font-weight: 700; text-transform: uppercase; font-size: 0.85rem;
+      letter-spacing: 0.05em; border-radius: var(--radius); transition: all 0.2s;
+      border: 2px solid transparent; cursor: pointer;
     }
-    .btn-primary {
-      background-color: var(--primary);
-      color: white;
-      box-shadow: var(--shadow-md);
-    }
-    .btn-primary:hover {
-      background-color: var(--primary-light);
-      transform: translateY(-1px);
-    }
-    .btn-outline {
-      border-color: var(--primary);
-      color: var(--primary);
-      background: transparent;
-    }
-    .btn-outline:hover {
-      background: var(--primary);
-      color: white;
-    }
+    .btn-primary { background-color: var(--primary); color: white; box-shadow: var(--shadow-md); }
+    .btn-primary:hover { background-color: var(--primary-light); transform: translateY(-1px); }
+    .btn-outline { border-color: var(--primary); color: var(--primary); background: transparent; }
+    .btn-outline:hover { background: var(--primary); color: white; }
 
-    /* Cards - Minimalist with Top Accent */
     .card {
-      background: var(--bg-surface);
-      padding: 32px;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-      border-top: 4px solid var(--primary); /* Distinguished accent */
-      box-shadow: var(--shadow-sm);
-      transition: transform 0.2s, box-shadow 0.2s;
-      display: flex;
-      flex-direction: column;
+      background: var(--bg-surface); padding: 32px; border-radius: var(--radius);
+      border: 1px solid var(--border); border-top: 4px solid var(--primary); 
+      box-shadow: var(--shadow-sm); transition: transform 0.2s, box-shadow 0.2s;
+      display: flex; flex-direction: column; height: 100%;
     }
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-lg);
-      border-top-color: var(--accent);
-    }
+    .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-top-color: var(--accent); }
 
-    /* Badges */
     .badge {
-      display: inline-block;
-      padding: 4px 10px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      border-radius: 4px;
-      background: var(--bg-body);
-      color: var(--text-muted);
-      border: 1px solid var(--border);
+      display: inline-block; padding: 4px 10px; font-size: 0.75rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.05em; border-radius: 4px;
+      background: var(--bg-body); color: var(--text-muted); border: 1px solid var(--border);
     }
     .badge-accent { background: var(--accent-soft); color: var(--accent); border-color: transparent; }
+    .badge-prestigious { background: var(--primary); color: white; font-size: 0.85rem; margin-bottom: 16px; }
 
-    /* =========================================================
-       HEADER
-       ========================================================= */
     .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      padding: 16px 0;
+      position: sticky; top: 0; z-index: 100; background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 16px 0;
     }
-    .header-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo {
-      font-family: var(--font-heading);
-      font-weight: 900;
-      font-size: 1.5rem;
-      color: var(--primary);
-      letter-spacing: -0.03em;
-    }
-    .nav-links {
-      display: flex;
-      gap: 24px;
-    }
-    .nav-links a {
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
+    .header-inner { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-family: var(--font-heading); font-weight: 900; font-size: 1.5rem; color: var(--primary); letter-spacing: -0.03em; }
+    .nav-links { display: flex; gap: 24px; }
+    .nav-links a { font-size: 0.9rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
     .nav-links a:hover { color: var(--primary); }
 
-    /* Mobile Menu Toggle */
     .menu-toggle { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--primary); }
     @media (max-width: 768px) {
       .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: white; flex-direction: column; padding: 24px; border-bottom: 1px solid var(--border); box-shadow: var(--shadow-lg); }
@@ -239,189 +146,52 @@
       .menu-toggle { display: block; }
     }
 
-    /* =========================================================
-       HERO SECTION
-       ========================================================= */
-    .hero {
-      position: relative;
-      padding: 100px 0 120px;
-      background: linear-gradient(to bottom, var(--bg-surface), var(--bg-body));
-    }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 60px;
-      align-items: center;
-    }
+    .hero { position: relative; padding: 100px 0 120px; background: linear-gradient(to bottom, var(--bg-surface), var(--bg-body)); }
+    .hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; align-items: center; }
     @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 40px; } }
 
-    .hero-kicker {
-      font-family: var(--font-body);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--accent);
-      margin-bottom: 16px;
-      display: block;
-    }
-    .hero-lead {
-      font-size: 1.25rem;
-      color: var(--text-muted);
-      margin-bottom: 32px;
-      max-width: 600px;
-    }
+    .hero-kicker { font-family: var(--font-body); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 16px; display: block; }
+    .hero-lead { font-size: 1.25rem; color: var(--text-muted); margin-bottom: 32px; max-width: 600px; }
     
-    .hero-avatar-wrapper {
-      position: relative;
-    }
-    .hero-avatar {
-      width: 280px;
-      height: 280px;
-      object-fit: cover;
-      border-radius: 50%; /* Circle */
-      margin: 0 auto;
-      border: 8px solid var(--bg-surface);
-      box-shadow: var(--shadow-lg);
-    }
-    /* Decorative circle behind avatar */
-    .hero-avatar-wrapper::before {
-      content: "";
-      position: absolute;
-      top: -20px; right: 50%; transform: translateX(50%);
-      width: 320px; height: 320px;
-      border-radius: 50%;
-      border: 2px dashed var(--primary);
-      opacity: 0.2;
-      z-index: -1;
-    }
+    .hero-avatar-wrapper { position: relative; }
+    .hero-avatar { width: 280px; height: 280px; object-fit: cover; border-radius: 50%; margin: 0 auto; border: 8px solid var(--bg-surface); box-shadow: var(--shadow-lg); }
+    .hero-avatar-wrapper::before { content: ""; position: absolute; top: -20px; right: 50%; transform: translateX(50%); width: 320px; height: 320px; border-radius: 50%; border: 2px dashed var(--primary); opacity: 0.2; z-index: -1; }
 
-    /* =========================================================
-       SECTIONS
-       ========================================================= */
-    
-    /* Stats Row */
-    .stats-row {
-      display: flex;
-      gap: 40px;
-      margin-top: 40px;
-      border-top: 1px solid var(--border);
-      padding-top: 32px;
-    }
-    .stat-item strong {
-      display: block;
-      font-size: 2rem;
-      font-family: var(--font-heading);
-      color: var(--primary);
-      line-height: 1;
-    }
-    .stat-item span {
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--text-light);
-    }
+    .stats-row { display: flex; gap: 40px; margin-top: 40px; border-top: 1px solid var(--border); padding-top: 32px; }
+    .stat-item strong { display: block; font-size: 2rem; font-family: var(--font-heading); color: var(--primary); line-height: 1; }
+    .stat-item span { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-light); }
     @media (max-width: 900px) { .stats-row { justify-content: center; } }
 
-    /* Tables */
-    .table-container {
-      overflow-x: auto;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background: var(--bg-surface);
-    }
-    th {
-      background: var(--bg-body);
-      text-align: left;
-      padding: 16px;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--text-muted);
-      border-bottom: 1px solid var(--border);
-    }
-    td {
-      padding: 16px;
-      border-bottom: 1px solid var(--border);
-    }
+    .table-container { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius); }
+    table { width: 100%; border-collapse: collapse; background: var(--bg-surface); }
+    th { background: var(--bg-body); text-align: left; padding: 16px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); border-bottom: 1px solid var(--border); }
+    td { padding: 16px; border-bottom: 1px solid var(--border); }
     tr:last-child td { border-bottom: none; }
 
-    /* Timeline */
-    .timeline-item {
-      padding-left: 24px;
-      border-left: 2px solid var(--border);
-      padding-bottom: 32px;
-      position: relative;
-    }
-    .timeline-item:last-child { border-left-color: transparent; }
-    .timeline-marker {
-      position: absolute;
-      left: -6px; top: 6px;
-      width: 10px; height: 10px;
-      background: var(--primary);
-      border-radius: 50%;
-    }
-    .timeline-date {
-      font-size: 0.85rem;
-      color: var(--accent);
-      font-weight: 700;
-      text-transform: uppercase;
-      margin-bottom: 4px;
-      display: block;
-    }
+    .timeline-item { padding-left: 24px; border-left: 2px solid var(--border); padding-bottom: 32px; position: relative; }
+    .timeline-item:last-child { border-left-color: transparent; padding-bottom: 0; }
+    .timeline-marker { position: absolute; left: -6px; top: 6px; width: 10px; height: 10px; background: var(--primary); border-radius: 50%; }
+    .timeline-date { font-size: 0.85rem; color: var(--accent); font-weight: 700; text-transform: uppercase; margin-bottom: 4px; display: block; }
     
-    /* Impact / Problem Solving Cards */
-    .impact-split {
-      border-top: 1px solid var(--border);
-      padding-top: 16px;
-      margin-top: auto;
-    }
-    .impact-label {
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      font-weight: 700;
-      color: var(--primary);
-      margin-bottom: 4px;
-      display: block;
-    }
+    .impact-split { border-top: 1px solid var(--border); padding-top: 16px; margin-top: auto; }
+    .impact-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; color: var(--primary); margin-bottom: 4px; display: block; }
 
-    /* Footer */
-    .footer {
-      background: var(--text-main);
-      color: white;
-      padding: 60px 0;
-      text-align: center;
-    }
+    /* Awards Specific CSS (Timeline & Categories) */
+    .award-category { margin-bottom: 40px; }
+    .award-category h4 { border-bottom: 2px solid var(--border); padding-bottom: 12px; margin-bottom: 20px; color: var(--primary); font-family: var(--font-heading); font-size: 1.25rem; }
+    .award-item { display: flex; align-items: flex-start; margin-bottom: 16px; }
+    .award-year { background: var(--primary); color: white; padding: 4px 10px; border-radius: 4px; font-size: 0.85rem; font-weight: bold; margin-right: 16px; min-width: 65px; text-align: center; margin-top: 2px;}
+    .award-text { font-size: 1rem; color: var(--text-main); }
+    .award-sub { display: block; font-size: 0.9rem; color: var(--text-muted); margin-top: 2px; }
+
+    .list-styled { list-style: none; padding: 0; margin: 0; }
+    .list-styled li { position: relative; padding-left: 20px; margin-bottom: 10px; font-size: 0.95rem; }
+    .list-styled li::before { content: "•"; color: var(--accent); position: absolute; left: 0; top: 0; font-weight: 900; }
+
+    .footer { background: var(--text-main); color: white; padding: 60px 0; text-align: center; }
     .footer a { color: var(--accent); text-decoration: underline; }
-
-    /* Utility */
     .text-copper { color: var(--accent); }
     .mt-4 { margin-top: 1.5rem; }
-
-    /* Custom List for Curiosity Section */
-    .list-styled {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .list-styled li {
-      position: relative;
-      padding-left: 20px;
-      margin-bottom: 10px;
-      font-size: 0.95rem;
-    }
-    .list-styled li::before {
-      content: "•";
-      color: var(--accent);
-      position: absolute;
-      left: 0;
-      top: 0;
-      font-weight: 900;
-    }
   </style>
 </head>
 <body>
@@ -430,17 +200,15 @@
   <header class="site-header">
     <div class="container header-inner">
       <a href="#" class="logo">S. Gullapalli</a>
-      
       <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">☰</button>
-      
       <nav class="nav-links">
         <a href="#about">About</a>
+        <a href="#awards">Honors & Awards</a>
         <a href="#academics">Academics</a>
         <a href="#projects">Projects</a>
         <a href="#impact">Impact</a>
         <a href="#leadership">Leadership</a>
         <a href="#curiosity">Curiosity</a>
-        <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
@@ -449,20 +217,19 @@
   <section class="hero" id="about">
     <div class="container">
       <div class="hero-grid">
-        <!-- Left: Text -->
         <div>
-          <span class="hero-kicker">Student Portfolio · Class of 2027</span>
-          <h1>Aspiring Medical Professional & <span style="font-style: italic; color: var(--accent);">STEM Leader</span></h1>
+          <span class="badge badge-prestigious">🏆 Truman Medical Program Full-Ride Scholar</span>
+          <span class="hero-kicker" style="margin-top: 16px;">Student Portfolio · Class of 2027</span>
+          <h1>Passionate Aspiring <span style="font-style: italic; color: var(--accent);">Medical Student</span></h1>
           <p class="hero-lead">
-            High school student at <strong>Francis Howell High School</strong> passionate about bridging mathematics, science, and healthcare to make a meaningful community impact.
+            High school student at <strong>Francis Howell High School</strong> dedicated to bridging compassionate healthcare, cognitive psychology, and community leadership.
           </p>
           
           <div style="display: flex; gap: 16px; flex-wrap: wrap;">
-            <a href="#projects" class="btn btn-primary">View Highlights</a>
+            <a href="#awards" class="btn btn-primary">View Achievements</a>
             <a href="#contact" class="btn btn-outline">Contact Me</a>
           </div>
 
-          <!-- Quick Stats Row -->
           <div class="stats-row">
             <div class="stat-item">
               <strong>10th</strong>
@@ -479,9 +246,8 @@
           </div>
         </div>
 
-        <!-- Right: Image -->
         <div class="hero-avatar-wrapper">
-          <img src="image_328346.jpg.png" alt="Sruthi Gullapalli" class="hero-avatar" />
+          <img src="image_328346.jpg" alt="Sruthi Gullapalli" class="hero-avatar" />
         </div>
       </div>
     </div>
@@ -496,16 +262,16 @@
         <h2>Academic Statement</h2>
         <div style="font-size: 1.1rem;">
           <p>
-            I am a 10th-grade student with a strong interest in mathematics, science, and technology. Through the Active Learning Institute, I am developing important academic skills such as clearly explaining my thinking, reflecting on mistakes, and learning beyond simply relying on answer keys.
+            My drive for medicine stems directly from my family. Watching my relatives in India navigate complex medical challenges showed me firsthand how much healthcare impacts a family’s entire life. Those experiences lit a fire in me. I don’t just want to study medicine; I want to provide compassionate, holistic care that truly makes a difference. 
           </p>
           <p>
-            I have a deep passion for pursuing a career in the medical field, especially inspired by the medical challenges my family in India has faced. Seeing these experiences has motivated me to want to help others and make a meaningful impact through healthcare. This passion continues to drive my academic goals and personal growth.
+            Alongside my medical focus, I am deeply fascinated by psychology. I believe that understanding how people think and feel is the crucial first step to helping them become better versions of themselves. This ties perfectly into how I view healthcare: it’s not just about treating a symptom, but treating the whole person. 
           </p>
           <p>
-            Another area I am deeply passionate about is leadership. Through the Active Learning Institute, I have had the opportunity to grow as a leader by hosting and organizing events for children in our community. These events focus on spreading knowledge and skills such as medical awareness, effective note-taking, and ACT skill improvement. Being able to guide and support others has strengthened my confidence and reinforced my desire to serve my community.
+            Through the Active Learning Institute, I’ve refined how I learn—moving away from memorization and toward deeply understanding and communicating complex ideas. I apply this same philosophy to my community work. As the founder of Sparked Initiative, I actively build educational and medical awareness programs because I believe knowledge should be shared, not gatekept. 
           </p>
           <p>
-            I use this portfolio to document my projects, events, mock exams, and selected notes so that I can reflect on my progress and prepare strongly for future opportunities.
+            This portfolio serves as a living document of my projects, research, and milestones as I prepare for a career where science meets human connection.
           </p>
         </div>
       </div>
@@ -523,13 +289,11 @@
           
           <hr style="border: 0; border-top: 1px solid var(--border); margin: 20px 0;">
           
-          <h3>Extracurricular Achievements</h3>
-          <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
-            <li style="margin-bottom: 12px;">🤺 <strong>Junior Olympics Qualifier</strong> & Competitive Fencer (Fencers Academy); medalist at Show Me State Games.</li>
-            <li style="margin-bottom: 12px;">🏆 <strong>1st Place Winner</strong> in Public Speaking, Essay Writing, & Senior Science Bee (North South Foundation).</li>
-            <li style="margin-bottom: 12px;">🎹 <strong>Award-Winning Pianist</strong> & Indian Classical Vocalist with extensive performance experience.</li>
-            <li style="margin-bottom: 12px;">🩺 <strong>Academic Enrichment:</strong> Completed ACT Marathon, Mini Medicine, & ActiveSTEM Math Marathon.</li>
-            <li style="margin-bottom: 12px;">💻 Built this site from scratch to document growth.</li>
+          <h3>Portfolio Navigation</h3>
+          <ul style="list-style: none; padding: 0; font-size: 0.95rem;">
+            <li style="margin-bottom: 12px;"><a href="#awards"><strong>See Full Honors & Awards &darr;</strong></a></li>
+            <li style="margin-bottom: 12px;"><a href="#projects">See Medical Research & Projects &darr;</a></li>
+            <li style="margin-bottom: 12px;"><a href="#impact">See Community Impact &darr;</a></li>
           </ul>
         </div>
       </div>
@@ -537,8 +301,161 @@
     </div>
   </section>
 
+  <!-- HONORS & AWARDS SECTION (DEDICATED SECTION) -->
+  <section class="section" id="awards" style="background: white;">
+    <div class="container">
+      <span class="hero-kicker">Recognition</span>
+      <h2>Honors & Awards</h2>
+      <p style="max-width: 700px; margin-bottom: 40px;">
+        A comprehensive timeline of my achievements across medical academics, public speaking, community leadership, and the arts.
+      </p>
+
+      <div class="grid grid-2">
+        
+        <!-- Column 1 -->
+        <div>
+          <div class="award-category">
+            <h4>Medicine & Academics</h4>
+            <div class="award-item">
+              <span class="award-year">2025</span>
+              <div>
+                <strong class="award-text">Truman Medical Program Scholarship</strong>
+                <span class="award-sub">Accepted with a full-ride scholarship.</span>
+              </div>
+            </div>
+            <div class="award-item">
+              <span class="award-year">2024</span>
+              <div>
+                <strong class="award-text">1st Place - Senior Science Bee</strong>
+                <span class="award-sub">North South Foundation (NSF).</span>
+              </div>
+            </div>
+            <div class="award-item">
+              <span class="award-year">2024</span>
+              <div>
+                <strong class="award-text">HOSA State Qualifier</strong>
+                <span class="award-sub">Health Occupations Students of America.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="award-category">
+            <h4>Speech & Debate</h4>
+            <div class="award-item">
+              <span class="award-year">2025</span>
+              <div>
+                <strong class="award-text">1st Place - Senior Public Speaking</strong>
+                <span class="award-sub">North South Foundation (Qualified for Nationals).</span>
+              </div>
+            </div>
+            <div class="award-item">
+              <span class="award-year">2025</span>
+              <div>
+                <strong class="award-text">Local Placements - Speech & Debate</strong>
+                <span class="award-sub">Placed across Public Forum, Informative, and Radio speaking.</span>
+              </div>
+            </div>
+            <div class="award-item">
+              <span class="award-year">2024</span>
+              <div>
+                <strong class="award-text">3rd Place - Junior Public Speaking</strong>
+                <span class="award-sub">North South Foundation.</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="award-category">
+            <h4>Service & Leadership</h4>
+            <div class="award-item">
+              <span class="award-year">2023</span>
+              <div>
+                <strong class="award-text">Presidential Volunteer Service Award</strong>
+                <span class="award-sub">Bronze Level recognition for community service.</span>
+              </div>
+            </div>
+            <div class="award-item">
+              <span class="award-year">Curr.</span>
+              <div>
+                <strong class="award-text">Founder & Executive Director</strong>
+                <span class="award-sub">Sparked Initiative.</span>
+              </div>
+            </div>
+            <div class="award-item">
+              <span class="award-year">Inc.</span>
+              <div>
+                <strong class="award-text">Incoming Executive Director</strong>
+                <span class="award-sub">North South Foundation (Local Chapter).</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2 -->
+        <div>
+          <div class="award-category">
+            <h4>Athletics & Technology</h4>
+            <div class="award-item">
+              <span class="award-year">2025</span>
+              <div>
+                <strong class="award-text">Junior Olympics Qualifier - Fencing</strong>
+                <span class="award-sub">Competed nationally; medalist at Show Me State Games.</span>
+              </div>
+            </div>
+            <div class="award-item">
+              <span class="award-year">2024-25</span>
+              <div>
+                <strong class="award-text">2x Summer Nationalist - Fencing</strong>
+                <span class="award-sub">Fencers Academy.</span>
+              </div>
+            </div>
+            <div class="award-item">
+              <span class="award-year">2025</span>
+              <div>
+                <strong class="award-text">NATS Qualifier - TANA Beauty Pageant</strong>
+                <span class="award-sub">National level qualification.</span>
+              </div>
+            </div>
+            <div class="award-item">
+              <span class="award-year">2024</span>
+              <div>
+                <strong class="award-text">NATS Qualifier - First Lego League</strong>
+                <span class="award-sub">Competed with the Electro Bots team.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="award-category">
+            <h4>Music & Arts</h4>
+            <div class="award-item">
+              <span class="award-year">2026</span>
+              <div>
+                <strong class="award-text">Superior Rating - Voice</strong>
+                <span class="award-sub">Goldcup Festival.</span>
+              </div>
+            </div>
+            <div class="award-item">
+              <span class="award-year">2021-25</span>
+              <div>
+                <strong class="award-text">5x Superior Rating - Piano</strong>
+                <span class="award-sub">Goldcup Festival (Consecutive years).</span>
+              </div>
+            </div>
+            <div class="award-item">
+              <span class="award-year">2018-25</span>
+              <div>
+                <strong class="award-text">3x Superior Rating - Piano</strong>
+                <span class="award-sub">Mid-America Music Association (MAMA).</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ACADEMICS SECTION -->
-  <section class="section" id="academics" style="background: white;">
+  <section class="section" id="academics">
     <div class="container">
       <div style="max-width: 800px; margin-bottom: 40px;">
         <span class="hero-kicker">Coursework</span>
@@ -547,7 +464,6 @@
       </div>
 
       <div class="grid grid-2">
-        <!-- Goals Card -->
         <div class="card">
           <h3>Current Goals</h3>
           <ul class="timeline" style="margin-top: 24px; list-style: none; padding-left: 0;">
@@ -569,12 +485,11 @@
              <li class="timeline-item">
               <span class="timeline-marker"></span>
               <span class="timeline-date">Research</span>
-              Begin a research paper to broaden understanding of the medical field.
+              Complete research paper on South Asian cardiovascular risk.
             </li>
           </ul>
         </div>
 
-        <!-- Course Table -->
         <div class="table-container">
           <table>
             <thead>
@@ -618,44 +533,52 @@
   </section>
 
   <!-- PROJECTS SECTION -->
-  <section class="section" id="projects">
+  <section class="section" id="projects" style="background: white;">
     <div class="container">
       <span class="hero-kicker">Portfolio</span>
       <h2>Projects & Engagement</h2>
       
       <div class="grid grid-3 mt-4">
-        <!-- Project 1 -->
+        
+        <div class="card">
+          <span class="badge badge-accent">Research & Writing</span>
+          <h3 style="margin-top: 16px;">Medical Publishing</h3>
+          <p style="font-size: 0.95rem; margin-bottom: 8px;">
+            <strong>Article:</strong> "The Action Gap: Cardiovascular Risk Awareness VS Preventative Behavior Among South Asian Adults in the US."
+          </p>
+          <p style="font-size: 0.95rem;">
+            <strong>Book:</strong> Co-authoring a book with Prof. Vinay Kodipelly detailing the digestive system and its relation to heart disease risk.
+          </p>
+        </div>
+
+        <div class="card">
+          <span class="badge badge-accent">Leadership</span>
+          <h3 style="margin-top: 16px;">Sparked Initiative</h3>
+          <p style="font-size: 0.95rem; margin-bottom: 8px;">
+             Hosted a student research showcase with Active STEM, giving 10 peers a platform to present their work.
+          </p>
+          <p style="font-size: 0.95rem;">
+             Led a prep workshop for kids competing in NSF exams, teaching study strategies and running practice rounds.
+          </p>
+        </div>
+
         <div class="card">
           <span class="badge badge-accent">Math & Logic</span>
-          <h3 style="margin-top: 16px;">ActiveSTEM Math Marathon</h3>
+          <h3 style="margin-top: 16px;">Analytical Mentorship</h3>
+          <p style="font-size: 0.95rem; margin-bottom: 8px;">
+             <strong>Tutoring:</strong> Provided detailed feedback to a middle school student on a statistics project, guiding her to success.
+          </p>
           <p style="font-size: 0.95rem;">
-             Participated in an intensive ACT-style math marathon. Focused on balancing speed and accuracy while documenting full solution steps under pressure.
+             <strong>Marathon:</strong> Participated in an intensive ACT-style math marathon under pressure.
           </p>
         </div>
 
-        <!-- Project 2 -->
-        <div class="card">
-          <span class="badge badge-accent">Competition</span>
-          <h3 style="margin-top: 16px;">Math Bowl Prep</h3>
-          <p style="font-size: 0.95rem;">
-             Practised contest-level questions in algebra and data analysis. Developed skills in clearly explaining reasoning to peers and mentors.
-          </p>
-        </div>
-
-        <!-- Project 3 -->
-        <div class="card">
-          <span class="badge badge-accent">Technology</span>
-          <h3 style="margin-top: 16px;">Digital Portfolio</h3>
-          <p style="font-size: 0.95rem;">
-             Designed and built this GitHub-based portfolio from scratch to document academic milestones, notes, and personal growth over time.
-          </p>
-        </div>
       </div>
     </div>
   </section>
 
   <!-- IMPACT SECTION -->
-  <section class="section" id="impact" style="background: white;">
+  <section class="section" id="impact">
     <div class="container">
       <span class="hero-kicker">Initiative</span>
       <h2>Problems I Noticed & Action Taken</h2>
@@ -663,9 +586,7 @@
         Identifying challenges in my community and taking proactive steps to solve them.
       </p>
 
-      <!-- Changed from grid-3 to grid-2 for a balanced 2x2 layout -->
       <div class="grid grid-2">
-        <!-- Example 1 (Medical Club) -->
         <div class="card">
           <div>
              <span class="impact-label">The Problem</span>
@@ -682,7 +603,6 @@
           </div>
         </div>
 
-        <!-- Example 2 (Note Taking) -->
         <div class="card">
           <div>
              <span class="impact-label">The Problem</span>
@@ -699,7 +619,6 @@
           </div>
         </div>
 
-        <!-- Example 3 (CPR Awareness) -->
         <div class="card">
           <div>
              <span class="impact-label">The Problem</span>
@@ -716,7 +635,6 @@
           </div>
         </div>
 
-        <!-- Example 4 (Magic Makers) -->
         <div class="card">
           <div>
              <span class="impact-label">The Problem</span>
@@ -732,13 +650,12 @@
              </p>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
   <!-- LEADERSHIP PHILOSOPHY SECTION -->
-  <section class="section" id="leadership">
+  <section class="section" id="leadership" style="background: white;">
     <div class="container">
       <span class="hero-kicker">Philosophy</span>
       <h2>My Leadership Style</h2>
@@ -763,8 +680,8 @@
     </div>
   </section>
 
-  <!-- NEW SECTION: WHAT I'M CURIOUS ABOUT -->
-  <section class="section" id="curiosity" style="background: white;">
+  <!-- CURIOSITY SECTION -->
+  <section class="section" id="curiosity">
     <div class="container">
       <span class="hero-kicker">Inquiry</span>
       <h2>What I'm Curious About</h2>
@@ -773,8 +690,6 @@
       </p>
 
       <div class="grid grid-2">
-        
-        <!-- Exploration -->
         <div class="card">
           <h4>Hands-on Experiments & Exploration</h4>
           <ul class="list-styled">
@@ -782,8 +697,6 @@
             <li>Exploring how lifestyle choices affect long-term health.</li>
           </ul>
         </div>
-
-        <!-- Healthcare Leadership -->
         <div class="card">
           <h4>Healthcare & Leadership</h4>
           <ul class="list-styled">
@@ -791,16 +704,12 @@
             <li>Ways to improve communication between doctors, patients, and families.</li>
           </ul>
         </div>
-
-        <!-- Emerging Topics -->
         <div class="card">
           <h4>Emerging Medical Topics</h4>
           <ul class="list-styled">
             <li><strong>AI in healthcare:</strong> How technology could help diagnose or monitor patients faster.</li>
           </ul>
         </div>
-
-        <!-- Big Questions -->
         <div class="card">
           <h4>Big "What If" Questions</h4>
           <ul class="list-styled">
@@ -808,27 +717,10 @@
             <li>How can communities be designed to encourage healthier living?</li>
           </ul>
         </div>
-
       </div>
     </div>
   </section>
-<section id="research-article-1" style="margin: 40px 0;">
-  <h2 style="margin: 0 0 12px 0;">Research Article</h2>
 
-  <div style="border:1px solid #E5E7EB; border-radius:12px; overflow:hidden; background:#fff;">
-    <iframe
-      src="ResearchArticle1.html"
-      title="ResearchArticle1 — Sruthi Gullapalli"
-      loading="lazy"
-      referrerpolicy="no-referrer"
-      style="width:100%; height: 900px; border:0;"
-    ></iframe>
-  </div>
-
-  <p style="margin-top: 10px; font-size: 0.95rem;">
-    <a href="ResearchArticle1.html" target="_blank" rel="noopener">Open article in a new tab</a>
-  </p>
-</section>
   <!-- CONTACT / FOOTER -->
   <footer class="footer" id="contact">
     <div class="container">
@@ -839,7 +731,7 @@
       
       <div style="margin-bottom: 40px;">
         <a href="mailto:glsruthi07@gmail.com" class="btn btn-outline" style="border-color: white; color: white;">glsruthi07@gmail.com</a>
-        
+        <a href="tel:6366756812" class="btn btn-outline" style="border-color: white; color: white; margin-left: 16px;">(636) 675-6812</a>
         <a href="https://github.com/username" class="btn btn-outline" style="border-color: white; color: white; margin-left: 16px;">GitHub</a>
       </div>
 
